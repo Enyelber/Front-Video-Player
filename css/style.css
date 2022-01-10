@@ -1,0 +1,134 @@
+:root {
+  --Primary: #1491a7;
+  --White: #ffffff;
+  --overlayMargins: 0.5rem;
+  --diameter: 400px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--White);
+  background-color: var(--Primary);
+  margin: 0;
+  transition: background-color 260ms ease-out;
+}
+div {
+  border: 1px rgb(157, 255, 0) solid;
+}
+.circle-top,
+.circle-bottom {
+  margin: auto;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+}
+.circle-top {
+  top: 0;
+  left: 0;
+}
+.circle-bottom {
+  bottom: 0;
+  right: 0;
+}
+.eclipse {
+  position: relative;
+  background-image: url(../images/ellipse.svg);
+  height: var(--diameter);
+  width: var(--diameter);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.circle-top .eclipse {
+  background-position: -167px -146px;
+}
+.circle-bottom .eclipse {
+  background-position: 136px 172px;
+}
+.container {
+  height: 100vh;
+  display: flex;
+}
+.container-elements {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-inline-size: 900px;
+  margin: auto;
+}
+.style-container-elements {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 240ms ease-in;
+}
+.style-container-elements:hover {
+  box-shadow: 0px 9px 46px #0000003d;
+  cursor: pointer;
+}
+.overlay-elements {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  height: 100%;
+}
+.overlay-elements {
+  opacity: 0;
+  transition: opacity 240ms ease-out;
+}
+.overlay-elements:hover {
+  opacity: 1;
+}
+.title {
+  text-transform: uppercase;
+  margin-inline-start: var(--overlayMargins);
+}
+button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  transition: transform 240ms ease-out;
+}
+
+button:active {
+  transform: scale(0.5);
+}
+
+#backwardBtn {
+  background-image: url(../images/icons8-reset1.svg);
+}
+
+#playBtn {
+  background-image: url(../images/icons8-circled_play1.svg);
+}
+
+#pauseBtn {
+  background-image: url(../images/icons8-pause_button1.svg);
+}
+
+#forwardBtn {
+  background-image: url(../images/icons8-reset2.svg);
+}
+.action-buttons {
+  margin: auto;
+  display: flex;
+  gap: var(--overlayMargins);
+}
+#progressBar {
+  cursor: pointer;
+  margin-inline-start: var(--overlayMargins);
+  margin-inline-end: var(--overlayMargins);
+  margin-block-end: var(--overlayMargins);
+}
+
+#video {
+  inline-size: 100%;
+  position: relative;
+  z-index: -1;
+}
+body.turn-off-lights {
+  background-color: #2e0706;
+}
